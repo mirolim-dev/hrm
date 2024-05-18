@@ -5,7 +5,6 @@ from .models import StaffLeaving
 
 @receiver(post_save, sender=StaffLeaving)
 def update_staff_is_working_status(sender, instance, **kwargs):
-    staff = instance.staff
+    staff = instance.staff_id
     staff.is_working = False
     staff.save()
-    
