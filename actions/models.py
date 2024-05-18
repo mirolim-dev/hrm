@@ -14,4 +14,5 @@ class StaffLeaving(models.Model):
 
     def __str__(self):
         return self.staff_id.__str__()
-    
+
+
