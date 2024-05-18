@@ -2,7 +2,7 @@ from django.db import models
 
 
 from account.models import CustomUser
-
+from config.mainvalidators import validate_file
 # Create your models here.
 class Ttj(models.Model):
     class Meta:
@@ -39,3 +39,7 @@ class Staff(CustomUser):
     def __str__(self):
         return self.get_full_name()
 
+    def clean(self) -> None:
+        super().clean()
+        validate_file(file=self.passport, allowed_types=['.pdf', '.docx', '.png', '.jpg', '.doc'], max_size=2)
+        validate_file(file=self.image, allowed_types=['.png', '.jpg'], max_size=2)
