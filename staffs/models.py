@@ -24,6 +24,7 @@ class Staff(CustomUser):
     passport = models.FileField(upload_to="Staff/passport", verbose_name="Passport nusxasi")
     salary = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Maosh", help_text="UZS da kiritilsin")
     image = models.ImageField(upload_to="Staff/image3x4", verbose_name="rasm", help_text="3X4 rasm yuklansin")
+    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE, verbose_name="TTJ", null=True)
     ROLE_CHOICES = (
         (1, "Mudir"),
         (2, "Tarbiyachi"),
