@@ -25,6 +25,6 @@ class Attandance(models.Model):
     tracked_at = models.DateTimeField(auto_now_add=True, verbose_name="Qayd etilgan vaqt")
 
     def __str__(self)->str:
-        return self.staff_id + "|" + self.ttj_id
+        return self.staff_id.__str__() + "|" + self.ttj_id.__str__()
 
 

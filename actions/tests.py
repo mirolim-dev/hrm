@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from staffs.models import Staff, Ttj
-from .models import StaffLeaving
+from .models import StaffLeaving, Attandance
 # Create your tests here.
 class StaffLeavingModelTestCase(TestCase):
 
@@ -38,3 +38,26 @@ class SignalTestCase(TestCase):
 
         staff.refresh_from_db()  # Refresh staff instance from database
         self.assertFalse(staff.is_working)
+
+class AttandanceModelTest(TestCase):
+
+    def setUp(self):
+        self.ttj = Ttj.objects.create(name="Test TTJ")
+        self.staff = Staff.objects.create(
+            first_name="Jane",
+            last_name="Doe",
+            phone="987654321",
+            ttj_id=Ttj.objects.create(name="Another Dormitory", university="Another University", address="Another Address"),
+            role=2,
+            is_working=True
+        )
+        self.attandance = Attandance.objects.create(ttj_id=self.ttj, staff_id=self.staff)
+
+    def test_attandance_creation(self):
+        self.assertEqual(self.attandance.ttj_id, self.ttj)
+        self.assertEqual(self.attandance.staff_id, self.staff)
+        self.assertIsNotNone(self.attandance.tracked_at)
+
+    def test_attandance_str(self):
+        expected_str = f"{self.staff}|{self.ttj}"
+        self.assertEqual(str(self.attandance), expected_str)
