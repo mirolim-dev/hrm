@@ -16,3 +16,15 @@ class StaffLeaving(models.Model):
         return self.staff_id.__str__()
 
 
+class Attandance(models.Model):
+    class Meta:
+        verbose_name = "Davomat"
+        verbose_name_plural = "Davomatlar"
+    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE)
+    staff_id = models.ForeignKey(Staff, on_delete=models.CASCADE, verbose_name="Xodim")
+    tracked_at = models.DateTimeField(auto_now_add=True, verbose_name="Qayd etilgan vaqt")
+
+    def __str__(self)->str:
+        return self.staff_id + "|" + self.ttj_id
+
+
