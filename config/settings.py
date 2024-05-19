@@ -60,7 +60,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +128,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'media/'
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -140,9 +140,6 @@ JAZZMIN_SETTINGS = {
     "site_title": "HRM",
     "site_header": "HRM",
     "site_brand": "HRM",
-    "site_logo": "logo/hrm.jpg",
-    "login_logo": "logo/hrm.jpg",
-    "login_logo_dark": "logo/hrm.jpg",
     "site_logo_classes": "img-circle",
     "site_icon": "logo/hrm.jpg",
     "welcome_sign": "Welcome to HRM",
@@ -158,24 +155,6 @@ JAZZMIN_SETTINGS = {
     },
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
-    "app_list": [
-        {
-            "app": "staffs",  # Original app name
-            "name": "Xodimlar",  # Custom display name
-        },
-        {
-            "app": "actions",  # Original app name
-            "name": "Hodisalar",  # Custom display name
-        },
-        {
-            "app": "account",  # Original app name
-            "name": "Accountlar",  # Custom display name
-        },
-        {
-            "app": "finance",  # Original app name
-            "name": "Moliya",  # Custom display name
-        },
-    ],
     "related_modal_active": False,
     "custom_css": None,
     "custom_js": None,
