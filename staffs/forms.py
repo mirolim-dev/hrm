@@ -16,4 +16,5 @@ class StaffAdminForm(forms.ModelForm):
             'is_working',
             'ttj_id',
             'role',
+            'description',
         ]
