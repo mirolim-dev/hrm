@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+    <li><a href="{% url "home" %}">Home</a></li>
+    <li><a href="{% url "actions" %}">Hodisalar</a></li>
+    <li><a href="{% url "finance" %}">Moliya</a></li>
+    <li class="active"><a href="{% url "staffs" %}">Xodimlar</a></li>{% endblock navbar %}
+
+{% block content %}
+<!-- Header End -->
+
+    <!-- Blog Details Hero Section Begin -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="bd-hero-text">
+                    <h1>Xodimlar Bo'limi</h1>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/demo/staffs.png' %}" alt="">
+    </div>
+    {% comment %} <section class="blog-details-hero set-bg" data-setbg="{% static 'img/demo/events.png' %}">   
+    </section> {% endcomment %}
+
+    <!-- Blog Details Hero End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="blog-details-text">
+                        <div class="bd-title">
+                            <p>Ushbu bo'lim o'z ichiga <b>Talabalar turar joylari</b> va <b>Xodimlar</b> ni oladi. Ularning Xodimlar qismi kengaytirilgan filter imkoniyatlariga ega</p>
+                        </div>
+                        <div class="bd-more-text">
+                            <div class="bm-item">
+                                <h4>TTJ</h4>
+                                <img src="{% static 'img/demo/salary_payment.png' %}" alt="">
+                                <p>Ushbu qismda Biznes egasi tegishli bo'lgan ttj lar qayd etib boriladi. TTJ larning ro'yxati hakillantirilish jarayonida quyidagi ma'lumotlardan foydalaniladi.
+                                    <b>TTJ nomi, TTJ biriktirilgan universitet nomi, TTJ joylashgan manzil</b> va albatta <b>TTJ dasturga qo'shilgan vaqt</b> dan foydalaniladi.</p>
+                            </div>
+                            <div class="bm-item">
+                                <h4>Xodimlar haqida  batafsil</h4>
+                                <img src="{% static 'img/demo/staffs_model.png' %}" alt="">
+                                <p>Ushbu qism xodimlar haqidagi ma'lumotlar qayd etib borish va kezi kelganda ma'lum bir tayinlangan jarimani filter va qidiruv tizimlari orqali osonlik bilan topib berish uchun javobgar. 
+                                    Ushbu bo'limdagi filterlar quyadiglardan iborat: <b>TTJ</b> bo'yicha filterlash, <b>Xodim turi(ro'li)</b> bo'yicha filterlash, <b>Xodimning ishlayotganlik statusi</b> bo'yicha filterlash
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

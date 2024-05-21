@@ -10,4 +10,8 @@ class StaffAdmin(admin.ModelAdmin):
     list_filter = ['role', 'is_working', 'ttj_id']
 
 admin.site.register(Staff, StaffAdmin)
-admin.site.register(Ttj)
+
+class TTJAdmin(admin.ModelAdmin):
+    list_display = ['name', 'university', 'address', 'created_at']
+    search_fields = ['name', 'university', 'address']
+admin.site.register(Ttj, TTJAdmin)
