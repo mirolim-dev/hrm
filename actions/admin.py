@@ -11,7 +11,7 @@ class StaffLeavingAdmin(admin.ModelAdmin):
 
     def get_ttj_id(self, obj):
         return obj.staff_id.ttj_id
-    get_ttj_id.short_description = 'TTJ'
+    get_ttj_id.short_description = 'ТЦ'
 
     def get_staff_role(self, obj):
         return obj.staff_id.display_role()

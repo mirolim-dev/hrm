@@ -6,8 +6,8 @@ from config.mainvalidators import validate_file
 # Create your models here.
 class Ttj(models.Model):
     class Meta:
-        verbose_name =  "Talabalar turar joyi"
-        verbose_name_plural = "Talabalar turar joylari"
+        verbose_name =  "торговые центр"
+        verbose_name_plural = "торговые центры"
     name = models.CharField(max_length=250, unique=True, verbose_name='Nomi')
     university = models.CharField(max_length=250, verbose_name="Universitet")
     address = models.CharField(max_length=250, verbose_name="Mazili")
@@ -24,7 +24,7 @@ class Staff(CustomUser):
     passport = models.FileField(upload_to="Staff/passport", verbose_name="Passport nusxasi")
     salary = models.DecimalField(max_digits=15, decimal_places=2, default=0, verbose_name="Maosh", help_text="UZS da kiritilsin")
     image = models.ImageField(upload_to="Staff/image3x4", verbose_name="rasm", help_text="3X4 rasm yuklansin")
-    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE, verbose_name="TTJ", null=True)
+    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE, verbose_name="ТЦ", null=True)
     ROLE_CHOICES = (
         (1, "Mudir"),
         (2, "Tarbiyachi"),

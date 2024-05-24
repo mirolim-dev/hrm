@@ -20,7 +20,7 @@ class Attandance(models.Model):
     class Meta:
         verbose_name = "Davomat"
         verbose_name_plural = "Davomatlar"
-    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE, verbose_name="TTJ")
+    ttj_id = models.ForeignKey(Ttj, on_delete=models.CASCADE, verbose_name="ТЦ")
     staff_id = models.ForeignKey(Staff, on_delete=models.CASCADE, verbose_name="Xodim")
     tracked_at = models.DateTimeField(auto_now_add=True, verbose_name="Qayd etilgan vaqt")
 

@@ -1,13 +1,19 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% block mobile_navbar %}
+    <li><a href="{% url "home" %}">Home</a></li>
+    <li><a href="{% url "actions" %}">Hodisalar</a></li>
+    <li><a href="{% url "finance" %}">Moliya</a></li>
+    <li class="active"><a href="{% url "staffs" %}">Xodimlar</a></li>
+{% endblock mobile_navbar %}
 
 {% block navbar %}
     <li><a href="{% url "home" %}">Home</a></li>
     <li><a href="{% url "actions" %}">Hodisalar</a></li>
     <li><a href="{% url "finance" %}">Moliya</a></li>
-    <li class="active"><a href="{% url "staffs" %}">Xodimlar</a></li>{% endblock navbar %}
-
+    <li class="active"><a href="{% url "staffs" %}">Xodimlar</a></li>
+{% endblock navbar %}
 {% block content %}
 <!-- Header End -->
 
@@ -20,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <img src="{% static 'img/demo/staffs.png' %}" alt="">
+        <img src="{% static 'img/demo/staff.png' %}" alt="">
     </div>
     {% comment %} <section class="blog-details-hero set-bg" data-setbg="{% static 'img/demo/events.png' %}">   
     </section> {% endcomment %}
@@ -38,16 +44,16 @@
                         </div>
                         <div class="bd-more-text">
                             <div class="bm-item">
-                                <h4>TTJ</h4>
-                                <img src="{% static 'img/demo/salary_payment.png' %}" alt="">
-                                <p>Ushbu qismda Biznes egasi tegishli bo'lgan ttj lar qayd etib boriladi. TTJ larning ro'yxati hakillantirilish jarayonida quyidagi ma'lumotlardan foydalaniladi.
-                                    <b>TTJ nomi, TTJ biriktirilgan universitet nomi, TTJ joylashgan manzil</b> va albatta <b>TTJ dasturga qo'shilgan vaqt</b> dan foydalaniladi.</p>
+                                <h4>Торговый Центр</h4>
+                                <img src="{% static 'img/demo/ttj.png' %}" alt="">
+                                <p>Ushbu qismda Biznes egasi tegishli bo'lgan ТЦ lar qayd etib boriladi. ТЦ larning ro'yxati hakillantirilish jarayonida quyidagi ma'lumotlardan foydalaniladi.
+                                    <b>ТЦ nomi, ТЦ biriktirilgan universitet nomi, ТЦ joylashgan manzil</b> va albatta <b>ТЦ dasturga qo'shilgan vaqt</b> dan foydalaniladi.</p>
                             </div>
                             <div class="bm-item">
                                 <h4>Xodimlar haqida  batafsil</h4>
-                                <img src="{% static 'img/demo/staffs_model.png' %}" alt="">
+                                <img src="{% static 'img/demo/staffs.png' %}" alt="">
                                 <p>Ushbu qism xodimlar haqidagi ma'lumotlar qayd etib borish va kezi kelganda ma'lum bir tayinlangan jarimani filter va qidiruv tizimlari orqali osonlik bilan topib berish uchun javobgar. 
-                                    Ushbu bo'limdagi filterlar quyadiglardan iborat: <b>TTJ</b> bo'yicha filterlash, <b>Xodim turi(ro'li)</b> bo'yicha filterlash, <b>Xodimning ishlayotganlik statusi</b> bo'yicha filterlash
+                                    Ushbu bo'limdagi filterlar quyadiglardan iborat: <b>ТЦ</b> bo'yicha filterlash, <b>Xodim turi(ro'li)</b> bo'yicha filterlash, <b>Xodimning ishlayotganlik statusi</b> bo'yicha filterlash
                                 </p>
                             </div>
                         </div>

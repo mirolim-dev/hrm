@@ -1,6 +1,12 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% block mobile_navbar %}
+    <li><a href="{% url "home" %}">Home</a></li>
+    <li class="active"><a href="{% url "actions" %}">Hodisalar</a></li>
+    <li><a href="{% url "finance" %}">Moliya</a></li>
+    <li><a href="{% url "staffs" %}">Xodimlar</a></li>
+{% endblock mobile_navbar %}
 {% block navbar %}
     <li><a href="{% url "home" %}">Home</a></li>
     <li class="active"><a href="{% url "actions" %}">Hodisalar</a></li>
@@ -19,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <img src="{% static 'img/demo/actions.png' %}" alt="">
+        <img src="{% static 'img/demo/events.png' %}" alt="">
     </div>
     {% comment %} <section class="blog-details-hero set-bg" data-setbg="{% static 'img/demo/events.png' %}">   
     </section> {% endcomment %}
@@ -39,16 +45,16 @@
                             <div class="bm-item">
                                 <h4>Davomatlar qismi haqida batafsil</h4>
                                 <img src="{% static 'img/demo/attandance.png' %}" alt="">
-                                <p>Davomat bo'limida barcha xodimlarning davomatlari qayd etilib boriladi. Davomatlarni ro'yhatini ko'rsatishda <b>Davomat olingan TTJ nomi</b>, 
+                                <p>Davomat bo'limida barcha xodimlarning davomatlari qayd etilib boriladi. Davomatlarni ro'yhatini ko'rsatishda <b>Davomat olingan ТЦ(торговый центр) nomi</b>, 
                                     <b>Hodimning ism va familyasi</b> va albatta <b>Davomat qayd etilgan vaqt</b> dan foydalaniladi.</p>
-                                <p>Qolaversa bu qismda malumotlarni saralash uchun kengaytirilgan filterlar qo'shilgan. Ular quyidagilar: <b>TTJ orqali filterlash</b>, 
+                                <p>Qolaversa bu qismda malumotlarni saralash uchun kengaytirilgan filterlar qo'shilgan. Ular quyidagilar: <b>ТЦ(торговый центр) orqali filterlash</b>, 
                                     <b>Hodim turi orqali filterlash</b> va albatta <b>Vaqt bo'yicha filterlash</b></p>
                             </div>
                             <div class="bm-item">
                                 <h4>Ishdan bo'shagan xodimlar haqida batafsil</h4>
-                                <img src="{% static 'img/demo/staff_leaving.png' %}" alt="">
+                                <img src="{% static 'img/demo/left_staff.png' %}" alt="">
                                 <p>Ushbu qism ishdan bo'shagan xodimlar haqida ma'lumotlar uchun javobgar. Yashil rangli to'rtburchak ichida filterlash imkoniyatlrini ko'rishingi mumkun.
-                                    Ular quyadiglardan iborat: <b>TTJ</b> bo'yicha filterlash, <b>Xodimning Jinsi(ayol, erkak)</b> bo'yicha filterlash va <b>Xodim turi(ro'li)</b> bo'yicha filterlash
+                                    Ular quyadiglardan iborat: <b>ТЦ(торговый центр)</b> bo'yicha filterlash, <b>Xodimning Jinsi(ayol, erkak)</b> bo'yicha filterlash va <b>Xodim turi(ro'li)</b> bo'yicha filterlash
                                 </p>
                             </div>
                         </div>
