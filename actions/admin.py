@@ -1,7 +1,9 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import StaffLeaving, Attandance
 from .custom_filters import FilterAttandanceByTime
+
 # Register your models here.
 
 class StaffLeavingAdmin(admin.ModelAdmin):
@@ -11,11 +13,11 @@ class StaffLeavingAdmin(admin.ModelAdmin):
 
     def get_ttj_id(self, obj):
         return obj.staff_id.ttj_id
-    get_ttj_id.short_description = 'ТЦ'
+    get_ttj_id.short_description = _("Bino")
 
     def get_staff_role(self, obj):
         return obj.staff_id.display_role()
-    get_staff_role.short_description = 'Xodim turi'
+    get_staff_role.short_description = _('Xodim turi')
 admin.site.register(StaffLeaving, StaffLeavingAdmin)
 
 

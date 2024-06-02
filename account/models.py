@@ -1,11 +1,12 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, AbstractUser
 from django.db import models
 from django.core.validators import RegexValidator
+from django.utils.translation import gettext_lazy as _
 
 class CustomUserManager(BaseUserManager):
     def create(self, phone, password=None, **extra_fields):
         if not phone:
-            raise ValueError('The phone must be set')
+            raise ValueError(_('Telefon raqam kiritilishi shart'))
         phone = phone
         user = self.model(phone=phone, **extra_fields)
         user.set_password(password)
@@ -28,26 +29,26 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         # abstract = True
 
     username = models.CharField(max_length=255, unique=True)
-    first_name = models.CharField(max_length=25, blank=True, verbose_name="Ism")
-    last_name = models.CharField(max_length=255, blank=True, verbose_name="Familya")
-    address = models.CharField(max_length=255, blank=True, verbose_name="Manzil")
+    first_name = models.CharField(max_length=25, blank=True, verbose_name=_("Ism"))
+    last_name = models.CharField(max_length=255, blank=True, verbose_name=_("Familya"))
+    address = models.CharField(max_length=255, blank=True, verbose_name=_("Manzil"))
     phone_regex = RegexValidator(
         regex=r'^\+?1?\d{9,15}$',
-        message="Phone number must be entered in the format: '+9989999999'. Up to 15 digits allowed."
+        message=_("Telefon raqam quyidagi formatda kiririlishi shart: '+9989999999'. 15 ta raqamdan ziyodini qo'llab quvvatlaydi.")
     )
-    phone = models.CharField(validators=[phone_regex], max_length=17, unique=True, verbose_name="Telefon raqami")
+    phone = models.CharField(validators=[phone_regex], max_length=17, unique=True, verbose_name=_("Telefon raqami"))
     email = models.EmailField(unique=True, blank=True, null=True)
     GENDER_CHOICES = (
-        (0, "Female"),
-        (1, "Male")
+        (0, _("Ayol")),
+        (1, _("Erkak"))
     )
-    gender = models.IntegerField(choices=GENDER_CHOICES, default=1, verbose_name="Jinsi")
+    gender = models.IntegerField(choices=GENDER_CHOICES, default=1, verbose_name=_("Jinsi"))
 
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="O'zgartirilgan vaqti")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_("O'zgartirilgan vaqti"))
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(auto_now_add=True, null=True)
+    date_joined = models.DateTimeField(auto_now_add=True, null=True, verbose_name=_("Qo'shilgan vaqti"))
     groups = models.ManyToManyField(
         'auth.Group',
         verbose_name='groups',
@@ -81,11 +82,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return super().has_module_perms(app_label)
     
     def __str__(self):
-        return self.phone
+        return self.get_full_name()
 
     def display_gender(self):
-        gender = {
-            0 : "Female",
-            1 : "Male",
-        }
-        return gender[self.gender]
+        return self.GENDER_CHOICES[self.gender][1]
+    

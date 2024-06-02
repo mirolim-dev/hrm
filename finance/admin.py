@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import SalaryPayment, KPI, Penalty
 # Register your models here.
@@ -10,15 +11,15 @@ class SalaryPaymentAdmin(admin.ModelAdmin):
 
     def get_ttj_id(self, obj):
         return obj.staff_id.ttj_id
-    get_ttj_id.short_description = 'TTJ'
+    get_ttj_id.short_description = _("Bino")
 
     def get_role(self, obj):
         return obj.staff_id.get_role_display()
-    get_role.short_description = 'Role'
+    get_role.short_description = _("Ro'l")
 
     def get_salary(self, obj):
         return obj.staff_id.salary
-    get_salary.short_description = 'Maosh'
+    get_salary.short_description = _('Maosh')
 admin.site.register(SalaryPayment, SalaryPaymentAdmin)
 
 
@@ -29,15 +30,15 @@ class KPIAdmin(admin.ModelAdmin):
 
     def get_ttj_id(self, obj):
         return obj.staff_id.ttj_id
-    get_ttj_id.short_description = 'ТЦ'
+    get_ttj_id.short_description = _("Bino")
 
     def get_role(self, obj):
         return obj.staff_id.get_role_display()
-    get_role.short_description = 'Role'
+    get_role.short_description = _("Ro'l")
 
     def get_salary(self, obj):
         return obj.staff_id.salary
-    get_salary.short_description = 'Maosh'
+    get_salary.short_description = _('Maosh')
 admin.site.register(KPI, KPIAdmin)
 
 
@@ -48,13 +49,13 @@ class PenaltyAdmin(admin.ModelAdmin):
 
     def get_ttj_id(self, obj):
         return obj.staff_id.ttj_id
-    get_ttj_id.short_description = 'ТЦ'
+    get_ttj_id.short_description = _("Bino")
 
     def get_role(self, obj):
         return obj.staff_id.get_role_display()
-    get_role.short_description = 'Role'
+    get_role.short_description = _("Ro'l")
 
     def get_salary(self, obj):
         return obj.staff_id.salary
-    get_salary.short_description = 'Maosh'
+    get_salary.short_description = _('Maosh')
 admin.site.register(Penalty, PenaltyAdmin)

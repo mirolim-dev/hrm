@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-02 14:58+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\actions\admin.py:16 .\actions\models.py:24
+msgid "Bino"
+msgstr "Здание"
+
+#: .\actions\admin.py:20
+msgid "Xodim turi"
+msgstr "Тип сотрудника"
+
+#: .\actions\apps.py:7
+msgid "Hodisalar"
+msgstr "События"
+
+#: .\actions\models.py:10
+msgid "Ishdan bo'shagan xodim"
+msgstr "Уволенный сотрудник"
+
+#: .\actions\models.py:11
+msgid "Ishdan bo'shagan xodimlar"
+msgstr "Уволенные сотрудники"
+
+#: .\actions\models.py:12 .\actions\models.py:25
+msgid "Xodim"
+msgstr "Сотрудник"
+
+#: .\actions\models.py:13
+msgid "Sabab"
+msgstr "Причина"
+
+#: .\actions\models.py:14
+msgid "Bo'shatilgan vaqti"
+msgstr "Свободное время"
+
+#: .\actions\models.py:22
+msgid "Davomat"
+msgstr "посещаемость"
+
+#: .\actions\models.py:23
+msgid "Davomatlar"
+msgstr "Посещаемость"
+
+#: .\actions\models.py:26
+msgid "Qayd etilgan vaqt"
+msgstr "Записанное время"
